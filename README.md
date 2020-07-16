@@ -27,11 +27,11 @@ The token is a string along the lines of `110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5P
 I have used Firebase Realtime Database to store the data.
 ![Database](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/img/1.PNG)
 
-You can use any database, just replace the queries. If you are using Firebase Realtime database, Set up [Admin Database API](https://firebase.google.com/docs/database/admin/start?authuser=0) and Download `serviceAccountKey.json` and insert Firebase URL in the [code](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/bot.py#L20)
+You can use any database, just replace the queries. If you are using Firebase Realtime database, Set up [Admin Database API](https://firebase.google.com/docs/database/admin/start?authuser=0) and Download `serviceAccountKey.json` and insert Firebase URL in the [code](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/bot.py#L18)
 ### Deployment
 TFUG Mumbai Bot is deployed on [Heroku](http://heroku.com/)
 - Create heroku project ```heroku create```
-- Insert App_link in [code](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/bot.py#L13)
+- Insert App_link in [code](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/bot.py#L207)
 - Create a new Git repository ```git init```
 - Add files ```git add .```
 - Commit the change ```git commit -m "first commit"```
