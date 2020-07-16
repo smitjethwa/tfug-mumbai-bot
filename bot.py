@@ -7,15 +7,15 @@ from firebase_admin import credentials
 from firebase_admin import db
 import os
 
-TOKEN = '1361748338:AAEG53stqIhZUn5sA5WTA-qY_XyeH-5LdsU'
+TOKEN = ''
 ADMINS = ['smitjethwa']
-FIREBASE_TOKEN = "hey-smit-firebase-adminsdk-52vpd-86c5806a19.json"
+FIREBASE_TOKEN = ""
 PORT = int(os.environ.get('PORT', 5000))
 
 cred = credentials.Certificate(FIREBASE_TOKEN)
 # Initialize the app with a service account, granting admin privileges
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://tfug-mumbai.firebaseio.com',
+    'databaseURL': 'https://<project-id>.firebaseio.com',
     'databaseAuthVariableOverride': None
 })
 
@@ -204,7 +204,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
-    updater.bot.setWebhook('https://tfugmumbai-bot.herokuapp.com/' + TOKEN)
+    updater.bot.setWebhook('https://yourappname.herokuapp.com/' + TOKEN)
     updater.idle()
     
 if __name__ == '__main__':
