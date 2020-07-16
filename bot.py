@@ -7,9 +7,11 @@ from firebase_admin import credentials
 from firebase_admin import db
 import os
 
-TOKEN = '1361748338:AAEG53stqIhZUn5sA5WTA-qY_XyeH-5LdsU'
+TOKEN = " " # Telegram Authorization Token
 ADMINS = ['smitjethwa']
-FIREBASE_TOKEN = "hey-smit-firebase-adminsdk-52vpd-86c5806a19.json"
+FIREBASE_TOKEN = " " # FIREBASE_TOKEN
+APP_URL = " " # Heroku App URL
+
 PORT = int(os.environ.get('PORT', 5000))
 
 cred = credentials.Certificate(FIREBASE_TOKEN)
@@ -200,7 +202,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
-    updater.bot.setWebhook('https://tfugmumbai-bot.herokuapp.com/' + TOKEN)
+    updater.bot.setWebhook(APP_URL + TOKEN)
     updater.idle()
     
 if __name__ == '__main__':
