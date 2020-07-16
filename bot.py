@@ -31,6 +31,8 @@ TUTORIAL_EMOJI = u'\U0001F4DA'
 COURSE_EMOJI = u'\U0001F4D9'
 EVENT_EMOJI = u'\U0001F3A4'
 
+def list_to_string(message_list):
+    return "\n\n".join(message_list) 
 
 def get_blog():
     ref = db.reference('/admin/blogs/').get()
@@ -126,7 +128,7 @@ def blogs(bot, update):
         blog_title = complete_list[i][0]
         blog_url = complete_list[i][1]
         message_to_be_send.append(f'{BLOG_EMOJI} <b>{i+1}. {blog_title}</b> {BLOG_EMOJI}\n<b>URL: </b>{blog_url}')
-    output_text = "\n\n".join(message_to_be_send) 
+    output_text = list_to_string(message_to_be_send)
     update.message.reply_text(output_text,parse_mode=telegram.ParseMode.HTML)
   
 def tutorials(bot, update):
@@ -138,7 +140,7 @@ def tutorials(bot, update):
         tutorial_title = complete_list[i][1]
         tutorial_url = complete_list[i][2]
         message_to_be_send.append(f'{TUTORIAL_EMOJI} <b>{i+1}. {tutorial_title}</b> {TUTORIAL_EMOJI}\n<b>Platform: </b>{tutorial_platform}\n<b>URL: </b>{tutorial_url}')
-    output_text = "\n\n".join(message_to_be_send) 
+    output_text = list_to_string(message_to_be_send)
     update.message.reply_text(output_text,parse_mode=telegram.ParseMode.HTML)
 
 def events(bot, update):
@@ -152,7 +154,7 @@ def events(bot, update):
         event_location = complete_list[i][3]
         event_date = '-'.join(event_date[::-1])
         message_to_be_send.append(f'{EVENT_EMOJI} <b>{i+1}. {event_name}</b> {EVENT_EMOJI}\n<b>Date: </b>{event_date}\n<b>Location: </b>{event_location}\nRegister: {event_link}')
-    output_text = "\n\n".join(message_to_be_send) 
+    output_text = list_to_string(message_to_be_send)
     update.message.reply_text(output_text,parse_mode=telegram.ParseMode.HTML)
 
 def courses(bot, update):
@@ -164,7 +166,7 @@ def courses(bot, update):
         course_title = complete_list[i][1]
         course_url = complete_list[i][2]
         message_to_be_send.append(f'{COURSE_EMOJI} <b>{i+1}. {course_title}</b> {COURSE_EMOJI}\n<b>Platform: </b>{course_platform}\n<b>URL: </b>{course_url}')
-    output_text = "\n\n".join(message_to_be_send) 
+    output_text = list_to_string(message_to_be_send)
     update.message.reply_text(output_text,parse_mode=telegram.ParseMode.HTML)
 
 def social_media(bot, update):
@@ -196,6 +198,8 @@ def main():
     dp.add_handler(CommandHandler('events',events))
     dp.add_handler(CommandHandler('courses',courses))
     dp.add_handler(CommandHandler('social_media',social_media))
+    dp.add_handler(MessageHandler(Filters.text, echo))
+    
     dp.add_error_handler(error)
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
