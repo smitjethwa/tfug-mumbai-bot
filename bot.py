@@ -17,7 +17,7 @@ PORT = int(os.environ.get('PORT', 5000))
 cred = credentials.Certificate(FIREBASE_TOKEN)
 # Initialize the app with a service account, granting admin privileges
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://tfug-mumbai.firebaseio.com',
+    'databaseURL': '', # Database URL <username>.firebaseio.com
     'databaseAuthVariableOverride': None
 })
 
