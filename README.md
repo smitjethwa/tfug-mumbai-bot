@@ -9,6 +9,9 @@ Telegram Bot to manage collections of Learning Material
 - /events
 
 ---
+![Database](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/img/7.png)
+![Database](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/img/8.png)
+
 
 ## How to use?
 ### 1. Create a Telegram bot using [Bot Father](https://telegram.me/BotFather)
