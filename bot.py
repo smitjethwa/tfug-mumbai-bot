@@ -10,14 +10,14 @@ import os
 TOKEN = " " # Telegram Authorization Token
 ADMINS = ['smitjethwa']
 FIREBASE_TOKEN = " " # FIREBASE_TOKEN
-APP_URL = " " # Heroku App URL
+APP_URL = "https://yourherokuappname.herokuapp.com/" # Heroku App URL
 
 PORT = int(os.environ.get('PORT', 5000))
 
 cred = credentials.Certificate(FIREBASE_TOKEN)
 # Initialize the app with a service account, granting admin privileges
 firebase_admin.initialize_app(cred, {
-    'databaseURL': '', # Database URL <username>.firebaseio.com
+    'databaseURL': 'http://<project-id.firebaseio.com/', # Database URL 
     'databaseAuthVariableOverride': None
 })
 
