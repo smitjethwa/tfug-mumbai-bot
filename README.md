@@ -22,7 +22,7 @@ The token is a string along the lines of `110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5P
 ### 2. Fork and Clone this repository.
 ### 3. Get all required packages/Library using [`pip install -r requirements.txt`](requirements.txt)
 ### 4. Change Telegram Authorization Token [Here](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/bot.py#L10)
-### 5. Edit [Command lists](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/bot.py#L194:L200) as per your requirements. 
+### 5. Edit [Command lists](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/bot.py#L141:L148) as per your requirements. 
 ### 6. Database
 I have used Firebase Realtime Database to store the data.
 ![Database](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/img/1.PNG)
@@ -31,7 +31,7 @@ You can use any database, just replace the queries. If you are using Firebase Re
 ### Deployment
 TFUG Mumbai Bot is deployed on [Heroku](http://heroku.com/)
 - Create heroku project ```heroku create```
-- Insert App_link in [code](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/bot.py#L207)
+- Insert App_link in [code](https://github.com/smitjethwa/tfug-mumbai-bot/blob/master/bot.py#L154)
 - Create a new Git repository ```git init```
 - Add files ```git add .```
 - Commit the change ```git commit -m "first commit"```
