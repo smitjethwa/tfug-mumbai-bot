@@ -3,7 +3,7 @@ cachetools==4.1.1
 certifi==2024.7.4
 cffi==1.14.0
 chardet==3.0.4
-cryptography==3.2
+cryptography==44.0.1
 decorator==4.4.2
 firebase-admin==4.3.0
 google-api-core==1.21.0
