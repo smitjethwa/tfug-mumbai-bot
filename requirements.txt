@@ -31,5 +31,5 @@ six==1.15.0
 tabulate==0.8.7
 tornado==6.5.1
 uritemplate==3.0.1
-urllib3==1.26.19
+urllib3==2.5.0
 wincertstore==0.2
